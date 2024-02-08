@@ -398,9 +398,9 @@ class AccountHandler:
                 time.sleep(5)
         self.password_checker = False
         print('cashier reset processed successfully!')
-        cashier_resets = ','.join(cashier_reset_list)
-        if cashier_reset_list:
-            return f'stranded funds found in {cashier_resets}'
+        cashiers_with_stranded_funds = ','.join(cashier_reset_list)
+        if len(cashier_reset_list) > 0:
+            return f'stranded funds found in {cashiers_with_stranded_funds}'
         else:
             return f'No stranded funds found in cashiers'
 

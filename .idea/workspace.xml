@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a23b703-8a2c-4c92-9325-c930a385155b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/account_checks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/account_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geckodriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/geckodriver.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logic_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spreadsheet_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/spreadsheet_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +106,7 @@
       <workItem from="1707310120962" duration="647000" />
       <workItem from="1707311055464" duration="1790000" />
       <workItem from="1707335862138" duration="16307000" />
+      <workItem from="1707403905701" duration="4226000" />
     </task>
     <servers />
   </component>

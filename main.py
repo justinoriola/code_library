@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
         # Withdraw and credit cashier account
         if time(16, 0) <= CURRENT_TIME <= time(23, 5):
-            # cashier_checks = account_handler.cashier_check(cashier_numbers)
+            cashier_checks = account_handler.cashier_check(cashier_numbers)
             account_handler.withdraw_from_cashier()
 
         # Instantiate spreadsheet handler objects and get spreadsheet values
@@ -103,10 +103,12 @@ if __name__ == '__main__':
             # message_account_reset = f'Reset amount:' + f'{str(account_reset)}'
 
             # check if yesterday's closing == today's opening balance
-            message_account_checks = (f'\nThe following checks were performed: '
+            message_account_checks = (
+                  f'\nChecks performed:'
                   f'\n-{spreadsheet_handler.betid_checks(bet_paid, already_paid_bet)}'
-                  f'\n-{spreadsheet_handler.opening_balance_check(today_closing_balance, yesterday_closing_balance)}')
-                  # f'\n{cashier_checks}')
+                  f'\n-{spreadsheet_handler.opening_balance_check(today_closing_balance, yesterday_closing_balance)}'
+                  f'\n{cashier_checks}'
+            )
 
             # instantiate and get the message to be sent
             message = logic.text(admin_username, key, base_balance=base_balance, expenses=expenses, banking=banking,
