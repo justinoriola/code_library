@@ -9,7 +9,6 @@ load_dotenv(dotenv_path='.env')
 from datetime import datetime, timedelta, time
 from account_handler import AccountHandler
 
-
 # Constants
 MY_EMAIL = os.environ.get('MY_EMAIL')
 GOOGLE_API_SCOPES = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
@@ -18,14 +17,11 @@ MAX_RETRIES = 5
 CURRENT_TIME = datetime.now().time()
 
 
-
-
 class SpreadSheetHandler(AccountHandler):
 
-    def __init__(self, spreadsheet_id, spreadsheet_name, admin_username: str, admin_password: str, amount_to_credit: int,
-                 total_number_of_cashiers: int):
-        super().__init__(admin_username, admin_password, amount_to_credit, total_number_of_cashiers)
+    def __init__(self, spreadsheet_id, spreadsheet_name, **kwargs):
 
+        super().__init__(**kwargs)
         self.spreadsheet_id = spreadsheet_id
         self.spreadsheet_name = spreadsheet_name
         self.scope = GOOGLE_API_SCOPES
@@ -35,6 +31,7 @@ class SpreadSheetHandler(AccountHandler):
         self.service_sheet = build('sheets', 'v4', credentials=self.credentials)
         self.service_drive = build('drive', 'v3',credentials=self.credentials)
         self.today = datetime.now().strftime('%A')
+        self.yesterday = (datetime.now() - timedelta(days=1)).strftime('%A')
         self.retry_counter = 0
 
     def get_credentials(self):
@@ -42,7 +39,7 @@ class SpreadSheetHandler(AccountHandler):
 
     # Select spreadsheet day based on script run time
     def closing_balance(self):
-        if time(00, 0) <= CURRENT_TIME <= time(20, 29):
+        if time(00, 0) <= CURRENT_TIME <= time(10, 29):
             closing_balance_day = datetime.now() - timedelta(days=1)
             return closing_balance_day.strftime('%A')
         else:
@@ -54,7 +51,7 @@ class SpreadSheetHandler(AccountHandler):
             'Wednesday': '!O6:O56',
             'Thursday': '!P6:P56',
             'Friday': '!R6:R56',
-            'Saturday': '!O6:O56',
+            'Saturday': '!R6:R56',
             'Sunday': '!S6:S56',
             'Monday': '!T6:T56'
         }
@@ -68,8 +65,9 @@ class SpreadSheetHandler(AccountHandler):
             'total_float': 'Weekly Report' + '!G15',
             'total_expenses': 'Weekly Report' + '!I15',
             'total_banking': 'Weekly Report' + '!k15',
-            'bet_ids': 'Weekly Report' + '!N6:T56',
-            'closing_balance': f'{self.closing_balance()}' + '!G19',
+            'bet_ids': self.bet_day(self.today),
+            'today_closing_balance': f'{self.today}' + '!G19',
+            'yesterday_closing_balance': f'{self.yesterday}' + '!G19',
             'already_paid_bet': 'Weekly Report' + '!W6:W100',
         }
         # Calculate the delay between each request to avoid exceeding rate limit (60 requests per minute)
@@ -88,23 +86,25 @@ class SpreadSheetHandler(AccountHandler):
                         result = [value.strip() for sublist in values for value in sublist if isinstance(value, str)
                               and value.lower().startswith('b')]
                     self.spreadsheet_data[key] = result
+                    # print('quick nap cos of api limit...')
+                    sleep(2)
                     break
                 except HttpError as error:
                     if error.resp.status == 429:
                         print(f'API rate limit exceeded. Retrying in {i ** 2} seconds.')
                         sleep((i ** 2) + random.random())
+                except Exception as e:
+                    if self.retry_counter == 0:
+                        print(f'Something went wrong. Retrying in 120 seconds.')
+                        sleep(120)
+                        self.get_spreadsheet_values()
+                        self.retry_counter += 1
                     else:
-                        if self.retry_counter == 0:
-                            print(f'Something went wrong. Retrying in {120} seconds.')
-                            sleep(120)
-                            self.get_spreadsheet_values()
-                            self.retry_counter += 1
-                        else:
-                            print(f'Unable to retrieve spreadsheet value for {key}: {value}')
-                            print(f'HTTP error occurred: {error}')
-                            break
-        print(f'All spreadsheet values retrieved successfully')
+                        print(f'Unable to retrieve spreadsheet value for {key}: {value}')
+                        print(f'HTTP error occurred: {e}')
+                        break
 
+        print(f'All spreadsheet values retrieved successfully')
         return self.spreadsheet_data
 
 
@@ -132,8 +132,6 @@ class SpreadSheetHandler(AccountHandler):
             print(f"duplicate spreadsheet '{duplicate_spreadsheet_name}' was successfully created.")
         except Exception as error:
             print(f'An error occurred: {error}')
-
-
 
     def clear_spreadsheet(self, days_to_clear):
 
@@ -164,7 +162,6 @@ class SpreadSheetHandler(AccountHandler):
         for cell_range, new_values in cells_to_clear.items():
             for i in range(MAX_RETRIES):
                 try:
-
                     # Prepare the request body with the new values
                     body = {
                         'values': new_values
@@ -219,15 +216,34 @@ class SpreadSheetHandler(AccountHandler):
                         print(f'HTTP error occurred: {error}')
                         break
 
-    def filtered_bet_list(self, bet_list1: list, bet_list2: list) -> list:
-        print('\nfiltering bet list...')
+    def betid_checks(self, bet_list1: list, bet_list2: list):
+        print("Checking today's bet list for anomalies...\n")
         try:
-            filtered_bet_list = [item for item in bet_list1 if item not in bet_list2]
-            if len(filtered_bet_list) == 0:
-                print('no new bet ticket(s) found')
-            else:
-                print(f'{len(filtered_bet_list)} new bet tickets found')
-            return filtered_bet_list
-        except Exception as error:
-            print(f'error occurred: {error}')
+            previously_paid_tickets = [item for item in bet_list1 if item in bet_list2]
+            incorrect_ticket_input = [ticket for ticket in bet_list1 if len(ticket) != 22]
 
+            if previously_paid_tickets and incorrect_ticket_input:
+                message = (f'{len(previously_paid_tickets)} previously paid tickets found:\n{", ".join(previously_paid_tickets)}\n'
+                        f'{len(incorrect_ticket_input)} incorrect ticket input:\n{", ".join(incorrect_ticket_input)}\n')
+
+            # Display previously paid tickets
+            if previously_paid_tickets:
+                message = f'{len(previously_paid_tickets)} previously paid tickets found:\n{", ".join(previously_paid_tickets)}\n'
+
+            # Display tickets with wrong input
+            if incorrect_ticket_input:
+                message = f'{len(incorrect_ticket_input)}Incorrect ticket input:\n{", ".join(incorrect_ticket_input)}\n'
+
+            # Display message if no anomalies found
+            if not previously_paid_tickets and not incorrect_ticket_input:
+                message = 'No incorrect or already paid ticket found!'
+        except Exception as error:
+            print(f'Error occurred: {error}')
+        finally:
+            return message
+
+    def opening_balance_check(self, yesterday_balance, today_balance):
+        if yesterday_balance == today_balance:
+            return f"today's opening: {today_balance} = yesterday's closing: {yesterday_balance}"
+        else:
+            return f"today's opening != yesterday's closing: {abs(yesterday_balance - today_balance)} difference."
