@@ -29,9 +29,9 @@ class LogicHandler(AccountHandler):
                 return f'Account is balanced.'
             elif account_balance < 0:
                 excess_balance = abs(account_balance)
-                return f"Balanced with {excess_balance} excess."
+                return f"Balanced with N{excess_balance} excess."
             else:
-                return f'Not Bal: {account_balance} shortage!'
+                return f'Not Bal: N{account_balance} shortage!'
         except Exception as e:
             print(e)
 

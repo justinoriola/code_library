@@ -12,7 +12,7 @@ from account_handler import AccountHandler
 # Constants
 MY_EMAIL = os.environ.get('MY_EMAIL')
 GOOGLE_API_SCOPES = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
-SERVICE_ACCOUNT_FILE = 'old-credentials.json'
+SERVICE_ACCOUNT_FILE = 'credentials.json'
 MAX_RETRIES = 5
 CURRENT_TIME = datetime.now().time()
 
@@ -50,7 +50,7 @@ class SpreadSheetHandler(AccountHandler):
             'Tuesday': '!N6:N56',
             'Wednesday': '!O6:O56',
             'Thursday': '!P6:P56',
-            'Friday': '!R6:R56',
+            'Friday': '!Q6:Q56',
             'Saturday': '!R6:R56',
             'Sunday': '!S6:S56',
             'Monday': '!T6:T56'
@@ -67,6 +67,7 @@ class SpreadSheetHandler(AccountHandler):
             'total_banking': 'Weekly Report' + '!k15',
             'bet_ids': self.bet_day(self.today),
             'today_closing_balance': f'{self.today}' + '!G19',
+            'today_opening_balance': f'{self.today}' + '!G32',
             'yesterday_closing_balance': f'{self.yesterday}' + '!G19',
             'already_paid_bet': 'Weekly Report' + '!W6:W100',
         }
@@ -103,8 +104,9 @@ class SpreadSheetHandler(AccountHandler):
                         print(f'Unable to retrieve spreadsheet value for {key}: {value}')
                         print(f'HTTP error occurred: {e}')
                         break
-
-        print(f'All spreadsheet values retrieved successfully')
+                finally:
+                    if 'already_paid_bet' in self.spreadsheet_data:
+                        print(f'All spreadsheet values retrieved successfully\n')
         return self.spreadsheet_data
 
 
@@ -217,7 +219,7 @@ class SpreadSheetHandler(AccountHandler):
                         break
 
     def betid_checks(self, bet_list1: list, bet_list2: list):
-        print("Checking today's bet list for anomalies...\n")
+        print("Checking bet-ids for incorrect input or already paid ticket(s)...")
         try:
             previously_paid_tickets = [item for item in bet_list1 if item in bet_list2]
             incorrect_ticket_input = [ticket for ticket in bet_list1 if len(ticket) != 22]
@@ -236,14 +238,14 @@ class SpreadSheetHandler(AccountHandler):
 
             # Display message if no anomalies found
             if not previously_paid_tickets and not incorrect_ticket_input:
-                message = 'No incorrect or already paid ticket found!'
+                message = 'no incorrect or already paid ticket!'
         except Exception as error:
             print(f'Error occurred: {error}')
         finally:
             return message
 
-    def opening_balance_check(self, yesterday_balance, today_balance):
-        if yesterday_balance == today_balance:
-            return f"today's opening: {today_balance} = yesterday's closing: {yesterday_balance}"
+    def opening_balance_check(self, today_opening_balance, yesterday_balance):
+        if yesterday_balance == today_opening_balance:
+            return f"yday's closing = today's opening = {yesterday_balance}"
         else:
-            return f"today's opening != yesterday's closing: {abs(yesterday_balance - today_balance)} difference."
+            return f"today's opening != yday's closing: {abs(yesterday_balance - today_opening_balance)} shortage."

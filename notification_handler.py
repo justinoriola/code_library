@@ -7,7 +7,7 @@ load_dotenv(dotenv_path='.env')
 TWILIO_SID=os.environ["TWILIO_ACCOUNT_SID"]
 TWILIO_AUTH_TOKEN=os.environ["TWILIO_AUTH_TOKEN"]
 TWILIO_VIRTUAL_NUMBER=os.getenv("TWILIO_PHONE_NUMBER")
-TWILIO_VERIFIED_NUMBER=os.getenv("TWILIO_VERIFIED_NUMBER")
+MY_NUMBER=os.getenv("MY_NUMBER")
 TWILIO_WHATSAPP_NUMBER=os.getenv("TWILIO_WHATSAPP_NUMBER")
 
 class NotificationHandler:
@@ -15,11 +15,14 @@ class NotificationHandler:
         self.client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 
     def send_sms(self, message):
-        message = self.client.messages \
-            .create(
-            from_=f'whatsapp:{TWILIO_WHATSAPP_NUMBER}',
-            body=message,
-            to=f'whatsapp:{TWILIO_VERIFIED_NUMBER}'
-        )
+        try:
+            message = self.client.messages \
+                .create(
+                from_= 'whatsapp:+14155238886',
+                body=message,
+                to='whatsapp:+447459555061'
+            )
 
-        print(f'\nWhatsApp notification sent successfully: {message.sid}')
+            print(f'\nWhatsApp notification sent successfully: {message.sid}')
+        except Exception as e:
+            print(f'Error sending message: {e}')

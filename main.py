@@ -17,7 +17,7 @@ CURRENT_TIME = datetime.now().time()
 TODAY = datetime.now().strftime('%A')
 TODAYS_DATE = datetime.now().date().strftime("%d/%m/%Y")
 PAST_DATE = (datetime.now().date() - timedelta(days=6)).strftime("%d/%m/%Y")
-
+message_bank = ''
 
 # # Main script
 # app = Flask(__name__)
@@ -28,6 +28,9 @@ PAST_DATE = (datetime.now().date() - timedelta(days=6)).strftime("%d/%m/%Y")
 if __name__ == '__main__':
     # set a start time
     start_time = datetime.now()
+
+    # instantiate notification object
+    notification_handler = NotificationHandler()
 
     # Loop through the credential dictionary's key
     for key in ACCOUNT_CREDENTIALS.keys():
@@ -46,15 +49,14 @@ if __name__ == '__main__':
         account_handler = AccountHandler(admin_username=admin_username, admin_password=admin_password,
                                          credited_amount=credited_amount, cashier_numbers=cashier_numbers,
                                          cashier_password=cashier_password)
-        notification_handler = NotificationHandler()
 
         # Withdraw and credit cashier account
-        if time(16, 0) <= CURRENT_TIME <= time(23, 5):
+        if time(15, 0) <= CURRENT_TIME <= time(23, 59):
             cashier_checks = account_handler.cashier_check(cashier_numbers)
             account_handler.withdraw_from_cashier()
 
         # Instantiate spreadsheet handler objects and get spreadsheet values
-        if time(6, 0) <= CURRENT_TIME <= time(23, 55):
+        if time(15, 0) <= CURRENT_TIME <= time(23, 55):
             sleep(2)
 
             # Instantiate handler object and get spreadsheet values
@@ -72,6 +74,7 @@ if __name__ == '__main__':
             expenses = int(spreadsheet_values['total_expenses'][0].replace(',', ''))
             banking = int(spreadsheet_values['total_banking'][0].replace(',', ''))
             today_closing_balance = int(spreadsheet_values['today_closing_balance'][0].replace(',', ''))
+            today_opening_balance = int(spreadsheet_values['today_opening_balance'][0].replace(',', ''))
             yesterday_closing_balance = int(spreadsheet_values['yesterday_closing_balance'][0].replace(',', ''))
             bet_paid = spreadsheet_values['bet_ids']
             already_paid_bet = spreadsheet_values['already_paid_bet']
@@ -106,8 +109,8 @@ if __name__ == '__main__':
             message_account_checks = (
                   f'\nChecks performed:'
                   f'\n-{spreadsheet_handler.betid_checks(bet_paid, already_paid_bet)}'
-                  f'\n-{spreadsheet_handler.opening_balance_check(today_closing_balance, yesterday_closing_balance)}'
-                  f'\n{cashier_checks}'
+                  f'\n-{spreadsheet_handler.opening_balance_check(today_opening_balance, yesterday_closing_balance)}'
+                  f'\n-{cashier_checks}'
             )
 
             # instantiate and get the message to be sent
@@ -119,8 +122,13 @@ if __name__ == '__main__':
             message += f'\nAccount Status:' + f"\n{'-' * 15}|" + f'\n{account_status_message}' + f'\n{account_reset_message}' + f"\n{'-' * 30}"
             if account_balance > 0:
                 message += message_account_checks
-            print(message)
-            # notification_handler.send_sms(message)
+
+            # bank messages
+            message_bank += f'{message}\n\n'
+
+            # send Notification / print to console
+            print(message_bank)
+            notification_handler.send_sms(message)
 
             # Create duplicate spreadsheet and reset existing spreadsheet for re-use.
             if TODAY == "Monday" and time(13, 25) <= CURRENT_TIME <= time(23, 50):
@@ -133,13 +141,14 @@ if __name__ == '__main__':
 
 
         # credit cashier account at specified time
-        elif time(6, 0) <= CURRENT_TIME <= time(7, 59):
+        elif time(5, 0) <= CURRENT_TIME <= time(7, 30):
             admin_balance = account_handler.get_admin_balance()
             account_handler.credit_cashier(admin_balance)
         else:
             print('This other section(s) of the script is not scheduled to run by this time')
             print(f'CURRENT_TIME: {CURRENT_TIME}')
         sleep(5)
+
 
     # calculate and print the total time taken to process the entire script
     end_time = datetime.now()

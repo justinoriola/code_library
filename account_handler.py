@@ -75,6 +75,7 @@ class AccountHandler:
         self.cashier_password = kwargs.get('cashier_password')
         self.cashier_to_be_credited = None
         self.password_checker = False
+        self.cashier_reset_list = []
 
         # Set up Firefox webdriver for Openshift deployment path
         # self.options = FirefoxOptions()
@@ -350,10 +351,12 @@ class AccountHandler:
         print(f'\nprocessing cashier league/racing reset for {self.admin_username}...')
         self.password_checker = True
         username = self.admin_username
-        cashier_reset_list = []
+        password = self.admin_password
+
         # loop through the number of cashiers to process stranded funds.
         for i in range(1, (number_of_cashiers + 1)):
             try:
+                time.sleep(2)
                 username_split_value = username.split('-')[2]
                 self.admin_username = f"cashier{username_split_value}-0{i}"
                 self.login()
@@ -380,9 +383,11 @@ class AccountHandler:
                 reset_league = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div/table/tbody/tr[1]/td[1]/div/div[2]/a')
                 reset_league.click()
                 time.sleep(2)
-                reset_race = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div/table/tbody/tr[2]/td[1]/div/div[2]/a')
-                reset_race.click()
-                cashier_reset_list.append(self.admin_username)
+                # reset_race = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div/table/tbody/tr[2]/td[1]/div/div[2]/a')
+                # reset_race.click()
+                self.cashier_reset_list.append(self.admin_username)
+                print(f'stranded funds found in {self.admin_username}')
+
                 # Close the both windows
                 self.driver.close()
                 self.driver.switch_to.window(initial_window_handles[0])  # Switch back to the main tab
@@ -390,19 +395,22 @@ class AccountHandler:
 
                 # Quit the WevDriver
                 self.driver.quit()
-                time.sleep(5)
+
             except (ElementClickInterceptedException, NoSuchElementException) as e:
                 print(f'no stranded fund in {self.admin_username}, tab closed!')
                 self.driver.close()
                 self.driver.quit()
                 time.sleep(5)
         self.password_checker = False
+        self.admin_username = username
+        self.admin_password = password
         print('cashier reset processed successfully!')
-        cashiers_with_stranded_funds = ','.join(cashier_reset_list)
-        if len(cashier_reset_list) > 0:
+        if len(self.cashier_reset_list) > 0:
+            cashiers_with_stranded_funds = ', '.join(self.cashier_reset_list)
             return f'stranded funds found in {cashiers_with_stranded_funds}'
         else:
-            return f'No stranded funds found in cashiers'
+            return f'no stranded funds found in cashiers'
+
 
 
 
