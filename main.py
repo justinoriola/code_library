@@ -5,7 +5,6 @@ from notification_handler import NotificationHandler
 from spreadsheet_handler import SpreadSheetHandler
 from account_handler import AccountHandler, ACCOUNT_CREDENTIALS
 from logic_handler import LogicHandler
-from tabulate import tabulate
 from dotenv import load_dotenv
 load_dotenv(dotenv_path='.env')
 from time import sleep
@@ -120,7 +119,7 @@ if __name__ == '__main__':
 
             # send report to WhatsApp
             message += f'\nAccount Status:' + f"\n{'-' * 15}|" + f'\n{account_status_message}' + f'\n{account_reset_message}' + f"\n{'-' * 30}"
-            if account_balance > 0:
+            if account_balance != 0:
                 message += message_account_checks
 
             # bank messages

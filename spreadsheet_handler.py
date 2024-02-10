@@ -234,7 +234,7 @@ class SpreadSheetHandler(AccountHandler):
 
             # Display tickets with wrong input
             if incorrect_ticket_input:
-                message = f'{len(incorrect_ticket_input)}Incorrect ticket input:\n{", ".join(incorrect_ticket_input)}\n'
+                message = f'{len(incorrect_ticket_input)} incorrect ticket input:\n{", ".join(incorrect_ticket_input)}\n'
 
             # Display message if no anomalies found
             if not previously_paid_tickets and not incorrect_ticket_input:
