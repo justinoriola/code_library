@@ -17,7 +17,7 @@ ACCOUNT_CREDENTIALS = {
         'number_of_cashier': 4,
         'base_balance':1000000,
         'worksheet_name': "ogba_daily_spreadsheet",
-        'worksheet_id': os.getenv('SPREADSHEET_ID1')
+        'worksheet_id': os.getenv('SPREADSHEET_OGBA')
     },
     'idiaraba':{
         'username': os.getenv('USERNAME_IDIARABA'),
@@ -27,7 +27,7 @@ ACCOUNT_CREDENTIALS = {
         'number_of_cashier': 4,
         'base_balance':1000000,
         'worksheet_name': "idiaraba_daily_spreadsheet",
-        'worksheet_id': os.getenv('SPREADSHEET_ID2')
+        'worksheet_id': os.getenv('SPREADSHEET_IDIARABA')
     },
     'awori': {
         'username': os.getenv('USERNAME_AWORI'),
@@ -37,7 +37,7 @@ ACCOUNT_CREDENTIALS = {
         'number_of_cashier': 3,
         'base_balance':700000,
         'worksheet_name': "awori_daily_spreadsheet",
-        'worksheet_id': os.getenv('SPREADSHEET_ID3')
+        'worksheet_id': os.getenv('SPREADSHEET_AWORI')
     },
     'moshalashi': {
         'username': os.getenv('USERNAME_MOSH'),
@@ -47,7 +47,7 @@ ACCOUNT_CREDENTIALS = {
         'number_of_cashier': 3,
         'base_balance': 500000,
         'worksheet_name': "moshalashi_daily_spreadsheet",
-        'worksheet_id': os.getenv('SPREADSHEET_ID4'),
+        'worksheet_id': os.getenv('SPREADSHEET_MOSH'),
     },
 
 }
@@ -128,6 +128,7 @@ class AccountHandler:
             login = self.driver.find_element(By.ID, "h_w_PC_cLogin_ctrlLogin_lnkBtnLogin")
             login.click()
             time.sleep(2)
+            print("Logged in successfully")
         except Exception as e:
             print(f'login error occurred', e)
 
@@ -401,6 +402,9 @@ class AccountHandler:
                 self.driver.close()
                 self.driver.quit()
                 time.sleep(5)
+            except Exception as e:
+                login_error = f'unable to login to {self.admin_username}'
+                self.cashier_reset_list.append(login_error)
         self.password_checker = False
         self.admin_username = username
         self.admin_password = password

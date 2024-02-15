@@ -47,28 +47,28 @@ class SpreadSheetHandler(AccountHandler):
 
     def bet_day(self, day_of_the_week):
         day_ranges = {
-            'Tuesday': '!N6:N56',
-            'Wednesday': '!O6:O56',
-            'Thursday': '!P6:P56',
-            'Friday': '!Q6:Q56',
-            'Saturday': '!R6:R56',
-            'Sunday': '!S6:S56',
-            'Monday': '!T6:T56'
+            'Tuesday': '!N6:N46',
+            'Wednesday': '!O6:O46',
+            'Thursday': '!P6:P46',
+            'Friday': '!Q6:Q46',
+            'Saturday': '!R6:R46',
+            'Sunday': '!S6:S46',
+            'Monday': '!T6:T46'
         }
         return 'Weekly Report' + day_ranges.get(day_of_the_week, '')
 
     def get_spreadsheet_values(self):
         print(f'\nRetrieving spreadsheet value(s) for account {self.admin_username}...')
-
+        bet_paid_range = self.bet_day(self.today)
         # Data
         WEEKLY_REPORT_RANGE = {
             'total_float': 'Weekly Report' + '!G15',
             'total_expenses': 'Weekly Report' + '!I15',
             'total_banking': 'Weekly Report' + '!k15',
-            'bet_ids': self.bet_day(self.today),
-            'today_closing_balance': f'{self.today}' + '!G19',
-            'today_opening_balance': f'{self.today}' + '!G32',
-            'yesterday_closing_balance': f'{self.yesterday}' + '!G19',
+            'bet_ids': bet_paid_range,
+            'today_closing_balance': f'{self.today}' + '!F11',
+            'today_opening_balance': f'{self.today}' + '!C28',
+            'yesterday_closing_balance': f'{self.yesterday}' + '!F11',
             'already_paid_bet': 'Weekly Report' + '!W6:W100',
         }
         # Calculate the delay between each request to avoid exceeding rate limit (60 requests per minute)
@@ -226,15 +226,15 @@ class SpreadSheetHandler(AccountHandler):
 
             if previously_paid_tickets and incorrect_ticket_input:
                 message = (f'{len(previously_paid_tickets)} previously paid tickets found:\n{", ".join(previously_paid_tickets)}\n'
-                        f'{len(incorrect_ticket_input)} incorrect ticket input:\n{", ".join(incorrect_ticket_input)}\n')
+                        f'{len(incorrect_ticket_input)} incorrect ticket input:\n{", ".join(incorrect_ticket_input)}')
 
             # Display previously paid tickets
             if previously_paid_tickets:
-                message = f'{len(previously_paid_tickets)} previously paid tickets found:\n{", ".join(previously_paid_tickets)}\n'
+                message = f'{len(previously_paid_tickets)} previously paid tickets found:\n{", ".join(previously_paid_tickets)}'
 
             # Display tickets with wrong input
             if incorrect_ticket_input:
-                message = f'{len(incorrect_ticket_input)} incorrect ticket input:\n{", ".join(incorrect_ticket_input)}\n'
+                message = f'{len(incorrect_ticket_input)} incorrect ticket input:\n{", ".join(incorrect_ticket_input)}'
 
             # Display message if no anomalies found
             if not previously_paid_tickets and not incorrect_ticket_input:

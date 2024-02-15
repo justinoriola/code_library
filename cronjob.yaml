@@ -4,7 +4,7 @@ metadata:
   name: okalt
   namespace: flask-app-internal
 spec:
-  schedule: "* * * * *"  # This schedule is set to run every minute. Adjust this according to your needs.
+  schedule: "* * * * *"  # Run every 5 minutes
   jobTemplate:
     spec:
       template:
@@ -12,16 +12,13 @@ spec:
           containers:
           - name: web
             image: containers.cisco.com/thousandeyes-it/flask-app-test:latest
-            resources:
-              requests:
-                memory: "128Mi"  # Adjust the memory request based on your requirements
-              limits:
-                memory: "256Mi"  # Adjust the memory limit based on your requirements
             securityContext:
               runAsNonRoot: true
-              runAsUser: 1000
-              runAsGroup: 2000
-              fsGroup: 2000
+              runAsUser: 1009250000  # Must match the UID in the Dockerfile
+              runAsGroup: 1009250000 # Must match the GID in the Dockerfile (if needed)
+              fsGroup: 1009250000    # Must match the GID in the Dockerfile (if n
           imagePullSecrets:
           - name: thousandeyes-it-justins-helloworld-pull-secret
           restartPolicy: OnFailure
+          # Ensure that the jobs do not exceed a certain runtime; this can be adjusted based on the expected task duration
+#          activeDeadlineSeconds: 2700

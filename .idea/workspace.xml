@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a23b703-8a2c-4c92-9325-c930a385155b" name="Changes" comment="amend env phone data">
+    <list default="true" id="5a23b703-8a2c-4c92-9325-c930a385155b" name="Changes" comment="A few more twick on spreadseet and main.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account_checks.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/account_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/account_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/geckodriver.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/geckodriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/geckodriver.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logic_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/notification_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spreadsheet_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/spreadsheet_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +31,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;contexts&quot;: [
+    {
+      &quot;name&quot;: &quot;flask-app-internal/api-prd-rtp-01-cae-cisco-com:6443/joriola&quot;,
+      &quot;originalNamespace&quot;: &quot;flask-app-internal&quot;
+    }
+  ],
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="KubernetesSettings">
+    <option name="contextName" value="flask-app-internal/api-prd-rtp-01-cae-cisco-com:6443/joriola" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -115,7 +132,34 @@
       <workItem from="1707311055464" duration="1790000" />
       <workItem from="1707335862138" duration="16307000" />
       <workItem from="1707403905701" duration="4226000" />
+      <workItem from="1707511827336" duration="14657000" />
+      <workItem from="1707589390957" duration="5687000" />
+      <workItem from="1707679667665" duration="14027000" />
+      <workItem from="1707696397347" duration="22553000" />
+      <workItem from="1707761242273" duration="8106000" />
+      <workItem from="1707855414016" duration="3830000" />
+      <workItem from="1707893201394" duration="541000" />
+      <workItem from="1707902351888" duration="202000" />
+      <workItem from="1707932654613" duration="1411000" />
+      <workItem from="1707943714466" duration="2286000" />
     </task>
+    <task id="LOCAL-00001" summary="Make certain changes on notificaiton, cashier reset/check report.">
+      <option name="closed" value="true" />
+      <created>1707552168634</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707552168634</updated>
+    </task>
+    <task id="LOCAL-00002" summary="A few more twick on spreadseet and main.">
+      <option name="closed" value="true" />
+      <created>1707603064300</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707603064300</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,10 +178,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="amend env phone data" />
-    <option name="LAST_COMMIT_MESSAGE" value="amend env phone data" />
+    <MESSAGE value="Make certain changes on notificaiton, cashier reset/check report." />
+    <MESSAGE value="A few more twick on spreadseet and main." />
+    <option name="LAST_COMMIT_MESSAGE" value="A few more twick on spreadseet and main." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/bet9ja_automation$main.coverage" NAME="main Coverage Results" MODIFIED="1707456999334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bet9ja_automation$main.coverage" NAME="main Coverage Results" MODIFIED="1707979020957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bet9ja_automation$test.coverage" NAME="test Coverage Results" MODIFIED="1707158025477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

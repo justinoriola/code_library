@@ -8,7 +8,7 @@ from logic_handler import LogicHandler
 from dotenv import load_dotenv
 load_dotenv(dotenv_path='.env')
 from time import sleep
-from flask import Flask
+# from flask import Flask
 
 # Constants
 DAYS_OF_THE_WEEK = ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday']
@@ -140,7 +140,7 @@ if __name__ == '__main__':
 
 
         # credit cashier account at specified time
-        elif time(5, 0) <= CURRENT_TIME <= time(7, 30):
+        elif time(5, 0) <= CURRENT_TIME <= time(13, 30):
             admin_balance = account_handler.get_admin_balance()
             account_handler.credit_cashier(admin_balance)
         else:
