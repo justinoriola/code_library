@@ -16,14 +16,11 @@ SERVICE_ACCOUNT_FILE = 'credentials.json'
 MAX_RETRIES = 5
 CURRENT_TIME = datetime.now().time()
 
-
 class SpreadSheetHandler(AccountHandler):
 
-    def __init__(self, spreadsheet_id, spreadsheet_name, **kwargs):
+    def __init__(self,account_key):
 
-        super().__init__(**kwargs)
-        self.spreadsheet_id = spreadsheet_id
-        self.spreadsheet_name = spreadsheet_name
+        super().__init__(account_key)
         self.scope = GOOGLE_API_SCOPES
         self.service_account_file = SERVICE_ACCOUNT_FILE
         self.spreadsheet_data = {}
@@ -33,6 +30,15 @@ class SpreadSheetHandler(AccountHandler):
         self.today = datetime.now().strftime('%A')
         self.yesterday = (datetime.now() - timedelta(days=1)).strftime('%A')
         self.retry_counter = 0
+        self.spreadsheet_values = self.get_spreadsheet_values()
+        self.cash_float = int(self.spreadsheet_values['total_float'][0].replace(',', ''))
+        self.expenses = int(self.spreadsheet_values['total_expenses'][0].replace(',', ''))
+        self.banking = int(self.spreadsheet_values['total_banking'][0].replace(',', ''))
+        self.today_closing_balance = int(self.spreadsheet_values['today_closing_balance'][0].replace(',', ''))
+        self.today_opening_balance = int(self.spreadsheet_values['today_opening_balance'][0].replace(',', ''))
+        self.yesterday_closing_balance = int(self.spreadsheet_values['yesterday_closing_balance'][0].replace(',', ''))
+        self.bet_paid = self.spreadsheet_values['bet_ids']
+        self.already_paid_bet = self.spreadsheet_values['already_paid_bet']
 
     def get_credentials(self):
         return service_account.Credentials.from_service_account_file(self.service_account_file, scopes=self.scope)
@@ -76,10 +82,11 @@ class SpreadSheetHandler(AccountHandler):
 
         # Loop over the weekly report range
         for key, value in WEEKLY_REPORT_RANGE.items():
+
             for i in range(MAX_RETRIES):
                 sleep(delay)
                 try:
-                    response = self.service_sheet.spreadsheets().values().get(spreadsheetId=self.spreadsheet_id,
+                    response = self.service_sheet.spreadsheets().values().get(spreadsheetId=self.sheet_id,
                                                                               range=value).execute()
                     values = response.get('values', [])
                     result = [item[0].strip() for item in values]
@@ -109,13 +116,12 @@ class SpreadSheetHandler(AccountHandler):
                         print(f'All spreadsheet values retrieved successfully\n')
         return self.spreadsheet_data
 
-
     def create_spreadsheet_duplicate(self, duplicate_spreadsheet_name):
 
         try:
             # Create a request for duplicating the Spreadsheet
             request = self.service_drive.files().copy(
-                fileId=self.spreadsheet_id,
+                fileId=self.sheet_id,
                 body={"name": duplicate_spreadsheet_name}
             ).execute()
             copied_file_id = request.get('id')
@@ -140,24 +146,14 @@ class SpreadSheetHandler(AccountHandler):
         """Clears specific cells of a spreadsheet for a given day."""
         # Data - cells in spreadsheet to be cleared
         cells_to_clear = {
-            f'{days_to_clear}!C10:E19': [['0', '0', '0']] * 10,
-            f'{days_to_clear}!G10:G19': [['0']] * 10,
-            f'{days_to_clear}!K6:K22': [['x']] * 17,
-            f'{days_to_clear}!L6:L22': [['0']] * 17,
-            f'{days_to_clear}!M6:M22': [['x']] * 17,
-            f'{days_to_clear}!N6:N22': [['0']] * 17,
-            f'{days_to_clear}!O6:O22': [['x']] * 17,
-            f'{days_to_clear}!P6:P22': [['0']] * 17,
-            f'{days_to_clear}!C32:C56': [['0']] * 25,
-            f'{days_to_clear}!D33:D56': [['x']] * 24,
-            f'{days_to_clear}!E32:E56': [['0']] * 25,
-            f'{days_to_clear}!F33:F56': [['x']] * 24,
-            f'{days_to_clear}!G32:G56': [['0']] * 25,
-            f'{days_to_clear}!L33:L57': [['0']] * 25,
-            f'{days_to_clear}!N33:N57': [['0']] * 25,
-            f'{days_to_clear}!P33:P57': [['0']] * 25,
-            f'{days_to_clear}!M34:M57': [['x']] * 24,
-            f'{days_to_clear}!O34:O57': [['x']] * 24,
+            f'{days_to_clear}!C10:F11': [['0', '0', '0', '0']] * 2,
+            f'{days_to_clear}!C18:C28': [['0']] * 11,
+            f'{days_to_clear}!F18:F29': [['0']] * 12,
+            f'{days_to_clear}!E23:E29': [['x']] * 7,
+            f'{days_to_clear}!B23:B28': [['x']] * 6,
+            f'{days_to_clear}!L4:L44': [['0']] * 41,
+            f'{days_to_clear}!K4:L44': [['x']] * 41,
+            f'{days_to_clear}!I6:I14': [['in progress...']] * 1,
         }
 
         # Loop over the cells to be cleared
@@ -168,10 +164,9 @@ class SpreadSheetHandler(AccountHandler):
                     body = {
                         'values': new_values
                     }
-
                     # Send the update request
                     result = self.service_sheet.spreadsheets().values().update(
-                        spreadsheetId=self.spreadsheet_id,
+                        spreadsheetId=self.sheet_id,
                         range=cell_range,
                         valueInputOption='USER_ENTERED',
                         body=body).execute()
@@ -203,7 +198,7 @@ class SpreadSheetHandler(AccountHandler):
 
                     # Resize the sheet based on the length of the values_list
                     result = self.service_sheet.spreadsheets().values().update(
-                        spreadsheetId=self.spreadsheet_id,
+                        spreadsheetId=self.sheet_id,
                         range=range_,
                         body={'values': [[value] for value in value_list1]},
                         valueInputOption='RAW'
@@ -245,7 +240,10 @@ class SpreadSheetHandler(AccountHandler):
             return message
 
     def opening_balance_check(self, today_opening_balance, yesterday_balance):
-        if yesterday_balance == today_opening_balance:
-            return f"yday's closing = today's opening = {yesterday_balance}"
-        else:
-            return f"today's opening != yday's closing: {abs(yesterday_balance - today_opening_balance)} shortage."
+        try:
+            if yesterday_balance == today_opening_balance:
+                return f"yday's closing = today's opening = {yesterday_balance}"
+            else:
+                return f"today's opening != yday's closing: {abs(yesterday_balance - today_opening_balance)} shortage."
+        except Exception as e:
+            print(f'Error occurred: {e}')

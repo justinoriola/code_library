@@ -34829,3 +34829,531 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: https://
 1707982268778	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
 1707982272320	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
 1707982330483	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1708005973718	geckodriver	INFO	Listening on 127.0.0.1:52996
+1708005974230	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofile8KH7EK"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708005974784	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708005975274	Marionette	INFO	Listening on port 53007
+WebDriver BiDi listening on ws://127.0.0.1:52997
+1708005975333	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:52997/devtools/browser/9824dbea-7e22-419e-9fc4-82ae37dae78d
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+JavaScript error: https://shop.bet9ja.com/Controls/v2.0/_code/Scripts/ISCoreUtils.js?FFE6BCD3EFF1D23225AC9E81DE713341, line 11: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+1708006004924	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1708006009810	Marionette	INFO	Stopped listening on port 53007
+1708006010907	geckodriver	INFO	Listening on 127.0.0.1:53315
+1708006011437	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofilewhBVkO"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708006011667	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708006011962	Marionette	INFO	Listening on port 53321
+WebDriver BiDi listening on ws://127.0.0.1:53316
+1708006012009	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:53316/devtools/browser/246c87c0-7293-4c69-924f-84286aa32eef
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1708006294418	geckodriver	INFO	Listening on 127.0.0.1:55873
+1708006294929	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileZkvtma"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708006295182	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708006295529	Marionette	INFO	Listening on port 55883
+WebDriver BiDi listening on ws://127.0.0.1:55874
+1708006295580	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:55874/devtools/browser/ed634ee8-b80f-422c-a7b4-51ec41fa9cb8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708006321744	Marionette	INFO	Stopped listening on port 55883
+1708006322649	geckodriver	INFO	Listening on 127.0.0.1:56168
+1708006323166	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofilekO1iwo"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708006323396	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708006323788	Marionette	INFO	Listening on port 56180
+WebDriver BiDi listening on ws://127.0.0.1:56169
+1708006323837	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:56169/devtools/browser/63c278bb-8beb-45ba-bc77-a117e8c95ba8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708006341460	Marionette	INFO	Stopped listening on port 56180
+1708008415167	geckodriver	INFO	Listening on 127.0.0.1:55606
+1708008415679	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileWVU6Df"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708008416186	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708008416833	Marionette	INFO	Listening on port 55616
+WebDriver BiDi listening on ws://127.0.0.1:55607
+1708008416896	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:55607/devtools/browser/420a8c0e-6ee2-4752-a6a3-789175a6349d
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708008444478	Marionette	INFO	Stopped listening on port 55616
+1708008446335	geckodriver	INFO	Listening on 127.0.0.1:55996
+1708008446853	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileULHj61"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708008447094	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708008447399	Marionette	INFO	Listening on port 56015
+WebDriver BiDi listening on ws://127.0.0.1:55997
+1708008447538	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:55997/devtools/browser/1b8e6e00-b201-4ead-bfd0-593149362936
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708008465791	Marionette	INFO	Stopped listening on port 56015
+1708009538643	geckodriver	INFO	Listening on 127.0.0.1:49271
+1708009539161	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileUPtz3N"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708009539770	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708009540215	Marionette	INFO	Listening on port 49283
+WebDriver BiDi listening on ws://127.0.0.1:49272
+1708009540274	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:49272/devtools/browser/bc070a15-b382-48be-94dc-64e3575ca8f5
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1708009871770	geckodriver	INFO	Listening on 127.0.0.1:52318
+1708009872284	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileAHv72j"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708009872804	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708009873240	Marionette	INFO	Listening on port 52332
+WebDriver BiDi listening on ws://127.0.0.1:52319
+1708009873292	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:52319/devtools/browser/50637315-983c-4337-a98f-26ba1804f9f8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708009899827	Marionette	INFO	Stopped listening on port 52332
+1708009901112	geckodriver	INFO	Listening on 127.0.0.1:52597
+1708009901637	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileiiKAWL"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708009901871	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708009902161	Marionette	INFO	Listening on port 52608
+WebDriver BiDi listening on ws://127.0.0.1:52598
+1708009902206	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:52598/devtools/browser/90b780a4-0cbc-4190-8b53-9ae345509cb4
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708009921453	Marionette	INFO	Stopped listening on port 52608
+1708009924927	geckodriver	INFO	Listening on 127.0.0.1:52873
+1708009925447	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofilezrgKOm"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708009925677	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708009926008	Marionette	INFO	Listening on port 52894
+WebDriver BiDi listening on ws://127.0.0.1:52874
+1708009926131	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:52874/devtools/browser/13590a8a-5dea-46df-a5f5-fd091d7ed7ed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708009933884	Marionette	INFO	Stopped listening on port 52894
+1708010239236	geckodriver	INFO	Listening on 127.0.0.1:55658
+1708010239753	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofile3pXFoS"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010240021	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010240343	Marionette	INFO	Listening on port 55668
+WebDriver BiDi listening on ws://127.0.0.1:55659
+1708010240429	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:55659/devtools/browser/5fbf5d96-7739-4239-8863-db2aef5de993
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010267509	Marionette	INFO	Stopped listening on port 55668
+1708010268339	geckodriver	INFO	Listening on 127.0.0.1:55888
+1708010268861	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileIvQCuE"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010269096	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010269429	Marionette	INFO	Listening on port 55898
+WebDriver BiDi listening on ws://127.0.0.1:55889
+1708010269552	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:55889/devtools/browser/37585955-8764-4d14-ab83-edf5f9bf652f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010286343	Marionette	INFO	Stopped listening on port 55898
+1708010289792	geckodriver	INFO	Listening on 127.0.0.1:56251
+1708010290310	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileo2tnQk"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010290547	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010290890	Marionette	INFO	Listening on port 56266
+WebDriver BiDi listening on ws://127.0.0.1:56252
+1708010291024	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:56252/devtools/browser/75591af2-8159-4f2d-b09d-a2ee949a181e
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010298842	Marionette	INFO	Stopped listening on port 56266
+1708010562673	geckodriver	INFO	Listening on 127.0.0.1:58675
+1708010563184	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofiley2OCPj"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010563452	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010563806	Marionette	INFO	Listening on port 58681
+WebDriver BiDi listening on ws://127.0.0.1:58676
+1708010563864	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:58676/devtools/browser/ece13b41-bb14-4b00-a766-c508c2c6a472
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010593535	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1708010593539	Marionette	INFO	Stopped listening on port 58681
+console.warn: services.settings: blocklists/addons-bloomfilters sync interrupted by shutdown
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.warn: services.settings: main/translations-models sync interrupted by shutdown
+console.warn: services.settings: main/search-telemetry-v2 sync interrupted by shutdown
+console.warn: services.settings: main/search-config-v2 sync interrupted by shutdown
+console.warn: services.settings: main/search-config sync interrupted by shutdown
+console.error: Region.sys.mjs: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.sys.mjs: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.sys.mjs", 411))
+console.warn: services.settings: main/devtools-compatibility-browsers sync interrupted by shutdown
+console.warn: services.settings: main/partitioning-exempt-urls sync interrupted by shutdown
+console.warn: services.settings: main/search-config-overrides sync interrupted by shutdown
+console.warn: services.settings: main/translations-wasm sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/language-dictionaries getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1708010594362	geckodriver	INFO	Listening on 127.0.0.1:59067
+1708010594883	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileOQJcgV"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010595117	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010595449	Marionette	INFO	Listening on port 59084
+WebDriver BiDi listening on ws://127.0.0.1:59068
+1708010595570	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:59068/devtools/browser/73d7c181-cfa0-4711-ae04-6c3bb4fede0b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010612412	Marionette	INFO	Stopped listening on port 59084
+1708010615875	geckodriver	INFO	Listening on 127.0.0.1:59256
+1708010616396	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileWTopjo"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010616623	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010616941	Marionette	INFO	Listening on port 59263
+WebDriver BiDi listening on ws://127.0.0.1:59257
+1708010617057	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:59257/devtools/browser/0b9f4a82-6f9c-465d-a9ab-6d6db14230d8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010624732	Marionette	INFO	Stopped listening on port 59263
+1708010710005	geckodriver	INFO	Listening on 127.0.0.1:60207
+1708010710518	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofilexqLBIO"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010710790	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010711134	Marionette	INFO	Listening on port 60219
+WebDriver BiDi listening on ws://127.0.0.1:60208
+1708010711196	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:60208/devtools/browser/ed9fa9cf-1cc9-4777-ae86-afe1d049a6e6
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010737265	Marionette	INFO	Stopped listening on port 60219
+1708010738078	geckodriver	INFO	Listening on 127.0.0.1:60533
+1708010738602	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofile5zhA5y"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010738833	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010739165	Marionette	INFO	Listening on port 60539
+WebDriver BiDi listening on ws://127.0.0.1:60534
+1708010739290	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:60534/devtools/browser/99a1f994-a5d6-4b3d-b4cd-67299c22ebae
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010756076	Marionette	INFO	Stopped listening on port 60539
+1708010759626	geckodriver	INFO	Listening on 127.0.0.1:60694
+1708010760141	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileEES7SK"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708010760373	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708010760695	Marionette	INFO	Listening on port 60711
+WebDriver BiDi listening on ws://127.0.0.1:60695
+1708010760821	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:60695/devtools/browser/1db1a5ad-b142-4d6c-bfd6-b470d4108d26
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708010768360	Marionette	INFO	Stopped listening on port 60711
+1708011056034	geckodriver	INFO	Listening on 127.0.0.1:63370
+1708012374931	geckodriver	INFO	Listening on 127.0.0.1:58489
+1708012375435	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileA7EZ2E"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708012375964	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708012376573	Marionette	INFO	Listening on port 58501
+WebDriver BiDi listening on ws://127.0.0.1:58490
+1708012376635	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:58490/devtools/browser/7d76e83c-e1bb-4b66-b149-e458100bbf93
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708012395568	Marionette	INFO	Stopped listening on port 58501
+1708012399020	geckodriver	INFO	Listening on 127.0.0.1:58831
+1708012399542	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileAfqBIN"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708012399782	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708012400060	Marionette	INFO	Listening on port 58843
+WebDriver BiDi listening on ws://127.0.0.1:58832
+1708012400101	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:58832/devtools/browser/9978b52a-346a-4722-840d-311aaf82c7bd
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708012408705	Marionette	INFO	Stopped listening on port 58843
+1708012449708	geckodriver	INFO	Listening on 127.0.0.1:59341
+1708012450213	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofilelyQ7yf"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708012450468	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708012450798	Marionette	INFO	Listening on port 59353
+WebDriver BiDi listening on ws://127.0.0.1:59342
+1708012450887	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:59342/devtools/browser/1daf13e2-7f2f-4f78-94a9-83df996f602c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708012468025	Marionette	INFO	Stopped listening on port 59353
+1708012471482	geckodriver	INFO	Listening on 127.0.0.1:59703
+1708012472004	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofilePAF1h2"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708012472231	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708012472510	Marionette	INFO	Listening on port 59714
+WebDriver BiDi listening on ws://127.0.0.1:59704
+1708012472591	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:59704/devtools/browser/9a442355-4485-4395-ad9e-977ae5118995
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708012480193	Marionette	INFO	Stopped listening on port 59714
+1708012523316	geckodriver	INFO	Listening on 127.0.0.1:60222
+1708012523829	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofile0gc0b1"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708012524091	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708012524407	Marionette	INFO	Listening on port 60229
+WebDriver BiDi listening on ws://127.0.0.1:60223
+1708012524496	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:60223/devtools/browser/b3b1526b-f75c-4284-a5d2-f761a495d55f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708012542004	Marionette	INFO	Stopped listening on port 60229
+1708012545485	geckodriver	INFO	Listening on 127.0.0.1:60408
+1708012546005	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/xl/rwwnw0cj36n4nznyqmhy5tch0000gn/T/rust_mozprofileGWnwQl"
+*** You are running in headless mode.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "URL_TO_ALTERNATE_PROVIDER" - scheme (http or https) must be specified.
+console.error: Enterprise Policies: 
+  Invalid parameters specified for DNSOverHTTPS.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708012546231	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1708012546605	Marionette	INFO	Listening on port 60418
+WebDriver BiDi listening on ws://127.0.0.1:60409
+1708012546657	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+DevTools listening on ws://127.0.0.1:60409/devtools/browser/f24b4dd0-339c-40fb-b1e8-c0da684b4087
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://shop.bet9ja.com."
+1708012555219	Marionette	INFO	Stopped listening on port 60418

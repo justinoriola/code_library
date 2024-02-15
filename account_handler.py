@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.common.exceptions import NoSuchElementException, InvalidSelectorException, UnexpectedAlertPresentException, ElementClickInterceptedException
 import time
 from datetime import datetime, timedelta
@@ -52,7 +51,6 @@ ACCOUNT_CREDENTIALS = {
 
 }
 
-
 # create a login decorator
 def login_decorator(func):
     def wrapper(self, *args, **kwargs):
@@ -67,12 +65,16 @@ class AccountHandler:
     TIME_NOW = datetime.now().strftime("%H:%M")
     TODAYS_DATE = datetime.now().strftime("%Y-%m-%d")
 
-    def __init__(self, **kwargs):
-        self.admin_username = kwargs.get('admin_username')
-        self.admin_password = kwargs.get('admin_password')
-        self.credited_amount = kwargs.get('credited_amount')
-        self.cashier_numbers = kwargs.get('cashier_numbers')
-        self.cashier_password = kwargs.get('cashier_password')
+    def __init__(self, account_key):
+        self.key = account_key
+        self.admin_username = ACCOUNT_CREDENTIALS[self.key]['username']
+        self.admin_password = ACCOUNT_CREDENTIALS[self.key]['password']
+        self.cashier_password = ACCOUNT_CREDENTIALS[self.key]['cashier_password']
+        self.credited_amount = ACCOUNT_CREDENTIALS[self.key]['amount_to_credit']
+        self.cashier_numbers = ACCOUNT_CREDENTIALS[self.key]['number_of_cashier']
+        self.sheet_name = ACCOUNT_CREDENTIALS[self.key]['worksheet_name']
+        self.sheet_id = ACCOUNT_CREDENTIALS[self.key]['worksheet_id']
+        self.base_balance = ACCOUNT_CREDENTIALS[self.key]['base_balance']
         self.cashier_to_be_credited = None
         self.password_checker = False
         self.cashier_reset_list = []

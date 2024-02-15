@@ -1,27 +1,33 @@
 from tabulate import tabulate
-from account_handler import AccountHandler
 from datetime import datetime
 
 TODAY = datetime.now().strftime('%A')
 TODAYS_DATE = datetime.now().date().strftime("%d/%m/%Y")
-class LogicHandler(AccountHandler):
+class LogicHandler():
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
         self.base = None
 
     # function calculate if total account is balanced based on certain inputs
     def account_balance(self, **kwargs):
-        x = [kwargs.get('base_balance'), kwargs.get('float'), kwargs.get('winning')]
-        y = [kwargs.get('banking'), kwargs.get('expenses'), kwargs.get('closing_balance'), kwargs.get('admin_balance')]
-        account_bal = round(sum(x) - sum(y))
-        return account_bal
+        try:
+            x = [kwargs.get('base_balance'), kwargs.get('float'), kwargs.get('winning')]
+            y = [kwargs.get('banking'), kwargs.get('expenses'), kwargs.get('closing_balance'), kwargs.get('admin_balance')]
+            account_bal = round(sum(x) - sum(y))
+        except Exception as e:
+            print(f'Error occurred: {e}')
+        finally:
+            return account_bal
 
     def account_reset(self, **kwargs) -> str:
-        x = [kwargs.get('base_balance'), kwargs.get('winning')]
-        y = [kwargs.get('closing_balance'), kwargs.get('admin_balance')]
-        account_reset = round(sum(x) - sum(y))
-        return f'Reset amount:' + f' {str(account_reset)}'
+        try:
+            x = [kwargs.get('base_balance'), kwargs.get('winning')]
+            y = [kwargs.get('closing_balance'), kwargs.get('admin_balance')]
+            account_reset = round(sum(x) - sum(y))
+        except Exception as e:
+            print(f'Error occurred: {e}')
+        finally:
+            return f'Reset amount:' + f' {str(account_reset)}'
 
     def account_status(self, account_balance):
         try:
@@ -33,7 +39,7 @@ class LogicHandler(AccountHandler):
             else:
                 return f'Not Bal: N{account_balance} shortage!'
         except Exception as e:
-            print(e)
+            print(f'Error occurred: {e}')
 
     def table(self, **kwargs):
         try:
@@ -43,7 +49,7 @@ class LogicHandler(AccountHandler):
                      f"{kwargs.get('admin_balance')}"]]
             return table
         except Exception as e:
-            print(e)
+            print(f'Error occurred: {e}')
 
     def text(self, username, shop_code, **kwargs):
         message = (
