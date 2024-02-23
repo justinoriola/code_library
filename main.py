@@ -37,7 +37,7 @@ if __name__ == '__main__':
             account_handler.withdraw_from_cashier()
 
         # Instantiate spreadsheet handler objects and get spreadsheet values
-        if time(21, 0) <= CURRENT_TIME <= time(23, 55):
+        if time(11, 0) <= CURRENT_TIME <= time(23, 55):
             sleep(2)
             #
             # # Instantiate handler object and get spreadsheet values
@@ -87,7 +87,7 @@ if __name__ == '__main__':
                   f'\nChecks performed:'
                   f'\n-{spreadsheet_handler.betid_checks(spreadsheet_handler.bet_paid, spreadsheet_handler.already_paid_bet)}'
                   f'\n-{spreadsheet_handler.opening_balance_check(spreadsheet_handler.today_opening_balance, spreadsheet_handler.yesterday_closing_balance)}'
-                  # f'\n-{cashier_checks}'
+                  f'\n-{cashier_checks}'
             )
             # get the message to be sent
             message = logic.text(
