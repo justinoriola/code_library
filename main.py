@@ -27,8 +27,7 @@ if __name__ == '__main__':
 
     # Loop through the credential dictionary's key
     for account_key in ACCOUNT_CREDENTIALS.keys():
-        if account_key =='idiaraba':
-            continue
+
         # Instantiate account handler object
         account_handler = AccountHandler(account_key)
 
