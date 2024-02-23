@@ -27,11 +27,10 @@ if __name__ == '__main__':
 
     # Loop through the credential dictionary's key
     for account_key in ACCOUNT_CREDENTIALS.keys():
-
+        if account_key =='idiaraba':
+            continue
         # Instantiate account handler object
         account_handler = AccountHandler(account_key)
-        # Instantiate handler object and get spreadsheet values
-        spreadsheet_handler = SpreadSheetHandler(account_key)
 
         # Withdraw and credit cashier account
         if time(20, 0) <= CURRENT_TIME <= time(23, 59):
@@ -39,9 +38,12 @@ if __name__ == '__main__':
             account_handler.withdraw_from_cashier()
 
         # Instantiate spreadsheet handler objects and get spreadsheet values
-        if time(11, 0) <= CURRENT_TIME <= time(23, 55):
+        if time(21, 0) <= CURRENT_TIME <= time(23, 55):
             sleep(2)
-
+            #
+            # # Instantiate handler object and get spreadsheet values
+            spreadsheet_handler = SpreadSheetHandler(account_key)
+            #
             # filter bet_paid list
             bet_ticket_checks = spreadsheet_handler.betid_checks(
                 spreadsheet_handler.bet_paid, spreadsheet_handler.already_paid_bet
@@ -65,9 +67,9 @@ if __name__ == '__main__':
             )
 
             account_balance = logic.account_balance(
-                base_balance=account_handler.base_balance, expenses=spreadsheet_handler.expenses, banking=spreadsheet_handler.banking,
-                closing_balance=spreadsheet_handler.today_closing_balance, float=spreadsheet_handler.cash_float,
-                winning=winning, admin_balance=admin_balance
+                base_balance=account_handler.base_balance, expenses=spreadsheet_handler.expenses,
+                banking=spreadsheet_handler.banking, closing_balance=spreadsheet_handler.today_closing_balance,
+                float=spreadsheet_handler.cash_float, winning=winning, admin_balance=admin_balance
             )
             account_handler.driver.quit()
 
@@ -88,7 +90,7 @@ if __name__ == '__main__':
                   f'\n-{spreadsheet_handler.opening_balance_check(spreadsheet_handler.today_opening_balance, spreadsheet_handler.yesterday_closing_balance)}'
                   # f'\n-{cashier_checks}'
             )
-            # instantiate and get the message to be sent
+            # get the message to be sent
             message = logic.text(
                 account_handler.admin_username, account_key, base_balance=account_handler.base_balance,
                 expenses=spreadsheet_handler.expenses, banking=spreadsheet_handler.banking,
@@ -101,7 +103,7 @@ if __name__ == '__main__':
             if account_balance != 0:
                 message += message_account_checks
 
-            # bank messages
+            # bank all messages
             message_bank += f'{message}\n\n'
 
             # send Notification / print to console
@@ -109,7 +111,7 @@ if __name__ == '__main__':
             notification_handler.send_sms(message)
 
             # Create duplicate spreadsheet and reset existing spreadsheet for re-use.
-            if TODAY == "Monday" and time(13, 25) <= CURRENT_TIME <= time(23, 50):
+            if TODAY == "Monday" and time(22, 00) <= CURRENT_TIME <= time(23, 50):
                 new_sheet_name = f'{account_handler.sheet_name}: {PAST_DATE} - {TODAYS_DATE}'
                 spreadsheet_handler.create_spreadsheet_duplicate(new_sheet_name)
                 for days_to_clear in DAYS_OF_THE_WEEK:
@@ -131,6 +133,3 @@ if __name__ == '__main__':
     elapsed_time = end_time - start_time
     minutes, seconds = divmod(elapsed_time.seconds, 60)
     print(f'\nTotal time: {minutes} minutes and {seconds} seconds')
-
-
-    # app.run(debug=True)

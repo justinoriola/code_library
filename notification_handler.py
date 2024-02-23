@@ -18,11 +18,10 @@ class NotificationHandler:
         try:
             message = self.client.messages \
                 .create(
-                from_= 'whatsapp:+14155238886',
+                from_= f'whatsapp:{TWILIO_WHATSAPP_NUMBER}',
                 body=message,
-                to='whatsapp:+447459555061'
+                to=f'whatsapp:{MY_NUMBER}'
             )
-
             print(f'\nWhatsApp notification sent successfully: {message.sid}')
         except Exception as e:
             print(f'Error sending message: {e}')

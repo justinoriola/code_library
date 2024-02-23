@@ -113,7 +113,7 @@ class SpreadSheetHandler(AccountHandler):
                         break
                 finally:
                     if 'already_paid_bet' in self.spreadsheet_data:
-                        print(f'All spreadsheet values retrieved successfully\n')
+                        print(f'All spreadsheet values retrieved successfully')
         return self.spreadsheet_data
 
     def create_spreadsheet_duplicate(self, duplicate_spreadsheet_name):
@@ -214,7 +214,7 @@ class SpreadSheetHandler(AccountHandler):
                         break
 
     def betid_checks(self, bet_list1: list, bet_list2: list):
-        print("Checking bet-ids for incorrect input or already paid ticket(s)...")
+        print("\nChecking betIDs for incorrect input or already paid ticket(s)...")
         try:
             previously_paid_tickets = [item for item in bet_list1 if item in bet_list2]
             incorrect_ticket_input = [ticket for ticket in bet_list1 if len(ticket) != 22]

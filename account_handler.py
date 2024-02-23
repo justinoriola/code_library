@@ -79,26 +79,6 @@ class AccountHandler:
         self.password_checker = False
         self.cashier_reset_list = []
 
-        # Set up Firefox webdriver for Openshift deployment path
-        # self.options = FirefoxOptions()
-        # self.options.binary_location = "/usr/lib/firefox-esr/firefox-esr"  # firefox path
-        # self.options.add_argument("--headless")  # headless mode option
-        # self.options.add_argument('--disable-gpu')  # Required for headless mode on certain systems
-        # self.options.add_argument('--private-window')  # incognito mode option
-        # self.driver_path = "/usr/local/bin/geckodriver"  # geckodriver path (requirement 4 Firefox browser)
-        # self.options.log.level = "trace"  # Set the log level to trace
-        # self.options.log.file = "./geckodriver.log"  # Provide the full path to geckodriver.log
-
-
-        # Set up Firefox Webdriver in headless mode with path declaration
-        # self.options = FirefoxOptions()
-        # self.options.binary_location = "/Applications/Firefox.app/Contents/MacOS/firefox" # firefox path
-        # self.options.add_argument("--headless")  # headless mode option
-        # self.options.add_argument('--private')  # incognito mode option
-        # self.driver_path = "/opt/homebrew/bin/geckodriver"  # geckodriver path (requirement 4 Firefox browser)
-        # self.driver = webdriver.Firefox(options=self.options, executable_path=self.driver_path)
-
-
         # Alternate way to set up Firefox driver in headless mode with no-path declaration
         self.options = FirefoxOptions()
         self.options.add_argument('-headless')
@@ -109,9 +89,6 @@ class AccountHandler:
             # Initialize Firefox driver
             print(f"\nlogging into {self.admin_username}...")
 
-            # Initialize alternative Firefox driver
-            # self.driver = webdriver.Firefox(options=self.options, executable_path=self.driver_path)
-            # self.driver.get('https://shop.bet9ja.com/')
 
             # Instantiate Firefox driver with no-path declaration
             self.driver = webdriver.Firefox(options=self.options)
